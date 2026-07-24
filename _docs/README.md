@@ -1,75 +1,121 @@
-[Documentation Home](README.md)
+# 📚 github-breakout Documentation
+
+Welcome to the complete documentation for this repository. This documentation is automatically generated and maintained by Woden Docbot.
+
+![Health: Healthy](https://img.shields.io/badge/Health-Healthy-green) ![Files Documented: 2](https://img.shields.io/badge/Files_Documented-2-blue) ![Coverage: 100](https://img.shields.io/badge/Coverage-100-green) ![Last Updated: 2026-07-24](https://img.shields.io/badge/Last_Updated-2026--07--24-gray)
+
+## 🔗 Quick Links
+
+[📂 public](./public/README.md) | [📂 src](./src/README.md)
+[📋 Dependencies](./DEPENDENCIES.md)
+
 
 ---
 
-# 📁 _docs
-
-> **Purpose:** Holds documentation-level index and descriptive metadata for the project's static front-end assets and a small TypeScript HTTP utilities module, describing how these parts relate and where to start.
-> 
-
-![Organization: Hierarchical](https://img.shields.io/badge/Organization-Hierarchical-blue)
-
-## 📑 Table of Contents
+> A minimal single-page generator that renders an animated Breakout-style SVG from a GitHub contribution graph and provides TypeScript HTTP helpers to serve assets and JSON.
 
 
-- [Overview](#overview)
-- [Subdirectories](#subdirectories)
-- [Dependencies](#dependencies)
-- [Architecture Notes](#architecture-notes)
+
+## 📖 Overview
+
+github-breakout is a compact web project that produces an animated Breakout-style SVG visualization driven by a GitHub contribution graph. The public directory hosts a single-page UI (index.html) that contains the client-side behavior and rendering for the animated SVG, intended to run in the browser for testing and demonstration.
+
+Supporting the UI, the src directory provides a small TypeScript utility (server.ts) that implements HTTP server helpers used to serve static files and send JSON responses. Together, the static front end and the TypeScript HTTP helpers let a developer deploy the visualization and optionally pair it with a backend that supplies contribution data.
+
+
+### 🧩 Key Components
+
+| Component | Purpose | Technologies |
+| --- | --- | --- |
+| **public** | Static web root containing the single-page UI (index.html) and client-side logic to generate and render an animated Breakout-style SVG from a GitHub contribution graph. Meant to be deployed as the public-facing assets for demonstration and testing. | `HTML`, `SVG` |
+| **src** | TypeScript utility module with server-side helpers (server.ts) for serving static files and producing JSON responses. Intended for reuse by server code to deliver the public assets and structured payloads to the browser. | `TypeScript`, `HTTP`, `JSON` |
+
+
+
+
+**Component Architecture:**
+
+```mermaid
+graph TD
+    C0[public]
+    C1[src]
+    C0 --> C1
+```
+
+### 🏗️ Architecture
+
+A small, focused web setup: a static single-page UI served as public assets and a TypeScript helper module that provides HTTP helpers to serve those assets and JSON. Data flows from an HTTP server using src helpers to the browser, which renders the animated SVG from contribution data.
+
+### 💡 Use Cases
+
+- ✦ Render an animated Breakout-style SVG in the browser based on a GitHub contribution graph for visualization and demo purposes
+- ✦ Deploy a minimal static web root (index.html) to host and test the visualization
+- ✦ Use the TypeScript HTTP helpers to serve the public assets and JSON payloads that supply contribution data to the UI
+
+
+
+### 🔧 Technologies
+
+
+**Languages:** ![TypeScript: ](https://img.shields.io/badge/TypeScript--blue)
+![HTML: ](https://img.shields.io/badge/HTML--blue) ![SVG: ](https://img.shields.io/badge/SVG--blue) ![HTTP: ](https://img.shields.io/badge/HTTP--blue) ![JSON: ](https://img.shields.io/badge/JSON--blue)
 
 ---
 
-## Overview
+## 📑 Documentation Sections
 
-This directory provides a concentrated description and index for two primary parts of the project: a public-facing single-page UI that generates an animated Breakout-style SVG from a GitHub contribution graph, and a small TypeScript module that offers HTTP server helpers for serving static files and JSON responses. At the root there are no source files; instead, the directory documents and organizes the subdirectories that contain the actual assets and utilities. The public/ subdirectory contains the static front-end (notably an index.html) implementing the browser UI and client-side behavior for animation and display. The src/ subdirectory contains a TypeScript server.ts module focused on serving static files and sending JSON responses.
+### [public](./public/README.md)
+Contains the static public-facing assets for generating and displaying an animated Breakout-style SVG derived from a GitHub contribution graph; primarily provides the single-page UI used in the browser.
 
-Together these components form the front-end and lightweight server support used to generate and serve the animated SVG experience. The public assets implement the UI and client-side generation/display of the SVG while the src server utilities provide minimal HTTP capabilities to host those static assets and optionally return JSON responses. This README acts as the navigation and on-ramp for developers who need to modify the UI or the serving utilities, explaining where to find entry points, common tasks, and maintenance considerations within this directory structure.
+
+This directory holds the static front-end asset(s) used to present a small single-page web UI that generates an animated Breakout-style SVG based on a GitHub contribution graph.
+
+![Files: 1](https://img.shields.io/badge/Files-1-blue)
+
+### [src](./src/README.md)
+Utility module providing simple HTTP server helpers for serving static files and sending JSON responses in TypeScript.
 
 
-### File Organization
-
-Contents are organized into two focused subdirectories: public/ contains the single-page UI static assets (index.html and related front-end resources), and src/ contains a single TypeScript module (server.ts) implementing HTTP helpers. There are no files at the root of _docs; the structure separates presentation (public) from server utilities (src) to make it clear where to change UI vs. serving logic.
-
-## 📂 Subdirectories
-
-This directory contains the following subdirectories:
-
-### [📁 public](./public/README.md)
-
-**Purpose:** Contains the static public-facing assets for generating and displaying an animated Breakout-style SVG derived from a GitHub contribution graph; primarily provides the single-page UI used in the browser.
+This directory contains a single TypeScript module focused on HTTP server utilities.
 
 ![Files: 1](https://img.shields.io/badge/Files-1-blue)
 
 ---
 
-### [📁 src](./src/README.md)
+## 📊 Documentation Statistics
 
-**Purpose:** Utility module providing simple HTTP server helpers for serving static files and sending JSON responses in TypeScript.
-
-![Files: 1](https://img.shields.io/badge/Files-1-blue)
-
----
-## Dependencies
-
-### Internal Dependencies
-
-| Dependency | Usage |
-| --- | --- |
-| `public assets` | The src server utilities serve these static files to the browser; public/index.html is the primary UI entry point referenced by the server. |
-| `src server utilities` | Provides the minimal HTTP helpers required to host and deliver the static UI and JSON responses needed by the browser client. |
-
-## Architecture Notes
-
-- Separation of concerns: static presentation (public/) is kept separate from server-side utilities (src/) so front-end changes do not require modifications to serving logic.
-- The directory contains no root-level source files; it documents and points to the actual implementation locations, making it a navigational and explanatory layer rather than an implementation layer.
+- **Files Documented**: 2
+- **Directories**: 3
+- **Coverage**: 100%
+- **Last Updated**: 2026-07-24
 
 ---
 
-## Navigation
+## 🧭 How to Navigate
 
-**↑ Parent Directory:** [Go up](../README.md)
-**🔗 Related:** [public](./public/README.md) • [src](./src/README.md)
+> ℹ️ **INFO**
+> Each directory has its own README.md with detailed information about that section. Use the breadcrumb navigation at the top of each page to navigate back to parent directories.
+
+### Navigation Features
+
+- **Breadcrumbs** - At the top of each page, showing your current location
+- **Directory READMEs** - Each folder has a comprehensive overview
+- **File Documentation** - Click through to individual file documentation
+- **Search** - Use GitHub's search or your IDE's search functionality
 
 ---
 
-*Generated by Woden Docbot*
+## 🤖 About Woden DocBot
+
+This documentation is automatically generated and kept up-to-date by Woden DocBot, an AI-powered documentation assistant. DocBot analyzes code on every pull request and updates documentation to reflect changes.
+
+### Features
+
+- **Automatic Updates** - Documentation updates on every PR
+- **Comprehensive Coverage** - Files, functions, classes, and directories
+- **Smart Navigation** - Breadcrumbs, related files, and parent links
+- **AI-Powered** - Uses Azure GPT models for intelligent documentation generation
+
+---
+
+*Generated by Woden DocBot for github-breakout*
