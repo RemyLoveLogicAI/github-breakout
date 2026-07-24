@@ -2,6 +2,12 @@
 
 Generate a Breakout game SVG from a GitHub user's contributions graph.
 
+## Live Demo
+
+Try it in your browser: `https://github-breakout-devin.loca.lt`
+
+If a tunnel password is requested, enter `52.183.72.253`.
+
 This project grabs your contribution graph through the GitHub API and generates images for light and dark mode:
 
 <picture>

@@ -2,12 +2,14 @@
   "name": "github-breakout",
   "version": "1.2.1",
   "description": "Generate a Breakout game SVG from a GitHub user's contributions graph",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node src/cli.ts",
+    "server": "ts-node src/server.ts",
+    "start": "node dist/server.js",
     "lint": "eslint . --ext .ts,.js",
     "build": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/node": "^24.0.14",
